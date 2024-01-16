@@ -24,7 +24,7 @@ public class ContaDto {
     @Valid
     @NotBlank
     @ValueOfEnum(enumClass = TipoOperacaoConta.class, message = "Valor inválido para operacao,valores possiveis: CONTAPOUPANCA, CONTACORRENTEPF, CONTACORRENTEPJ, PAGAMENTO ")
-    private String operacao;
+    private String operacaoConta;
 
     @Valid
     private BigDecimal saldo;
