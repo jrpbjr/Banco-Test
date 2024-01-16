@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "3642f82c-79f6-4b0c-859b-1d246075cf7a",
+		"name": "Banco test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4605050"
+	},
+	"item": [
+		{
+			"name": "Cliente pj",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"telefone\": \"1137279661\",\r\n    \"celular\": \"11997649175\",\r\n    \"nome\": \"Priscila e Lívia Marketing ME\",\r\n    \"cnpj\": \"69080968000171\",\r\n    \"nome_fantasia\": \"Priscila e Lívia Marketing ME\",\r\n    \"nome_contato\": \"Priscila fulana\",\r\n    \"email\": \"producao@priscilaeliviamarketingme.com.br\",\r\n    \"conta\": {        \r\n        \"numero_conta\": 250100,\r\n        \"agencia\": 123,\r\n        \"operacaoConta\": \"CONTACORRENTEPJ\",\r\n        \"saldo\": 15000.00 },\r\n     \"endereco\": {        \r\n        \"cep\": \"09962720\",\r\n        \"rua\": \"Travessa Senhor do Bonfim\",\r\n        \"numero\": 890,\r\n        \"complemento\": \"s/complemento\",\r\n        \"bairro\": \"Diadema\",\r\n        \"cidade\": \"São Paulo\",\r\n        \"uf\": \"SP\"}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/cliente/pj",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"cliente",
+						"pj"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cliente pf",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"telefone\": \"8535825284\",\r\n    \"rg\": \"203625237\",\r\n    \"cpf\": \"14857746832\",\r\n    \"celular\": \"85985390965\",\r\n    \"nome\": \"Rita Caroline Souza\",\r\n    \"email\": \"rita@gol.com\",\r\n    \"dt_nascimento\": \"1989-01-02\",\r\n    \"genero\": \"FEMININO\",\r\n    \"conta\": {        \r\n        \"numero_conta\": 25050,\r\n        \"agencia\": 123,\r\n        \"operacaoConta\": \"CONTACORRENTEPF\",\r\n        \"saldo\": 5000.00 },\r\n    \"endereco\": {        \r\n        \"cep\": \"04268020\",\r\n        \"rua\": \"Rua Arcipreste de Arndrade\",\r\n        \"numero\": 506,\r\n        \"complemento\": \"s/complemento\",\r\n        \"bairro\": \"Ipiranga\",\r\n        \"cidade\": \"São Paulo\",\r\n        \"uf\": \"SP\"}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/cliente/pf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"cliente",
+						"pf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Swagger",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"contaOrigem\": \"0000-01\",\r\n   \"contaDestino\": \"0000-03\",\r\n   \"valorTransferencia\": 100.00,\r\n   \"taxa\":5.0,\r\n   \"dataAgendamento\":\"2024-01-01\",\r\n   \"tipo\":\"A\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/v2/api-docs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v2",
+						"api-docs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/cliente/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"cliente",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/cliente/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"cliente",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes pj",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"id\": 1,\r\n    \"telefone\": \"1137279661\",\r\n    \"celular\": \"11997649175\",\r\n    \"nome\": \"Priscila e Lívia Marketing ME\",\r\n    \"cnpj\": \"69080968000171\",\r\n    \"nome_fantasia\": \"Priscila e Lívia Marketing ME\",\r\n    \"nome_contato\": \"Priscila fulana\",\r\n    \"email\": \"producao@priscilaeliviamarketingme.com.br\",    \r\n     \"endereco\": {        \r\n        \"cep\": \"09962720\",\r\n        \"rua\": \"Travessa Senhor do Bonfim\",\r\n        \"numero\": 891,\r\n        \"complemento\": \"s/complemento\",\r\n        \"bairro\": \"Diadema\",\r\n        \"cidade\": \"São Paulo\",\r\n        \"uf\": \"SP\"}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/cliente/pj",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"cliente",
+						"pj"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes pf",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"2\",\r\n    \"telefone\": \"8535825284\",\r\n    \"rg\": \"203625237\",\r\n    \"cpf\": \"14857746832\",\r\n    \"celular\": \"85985390965\",\r\n    \"nome\": \"Rita Caroline Souza\",\r\n    \"email\": \"rita@gol.com\",\r\n    \"dt_nascimento\": \"1989-01-02\",\r\n    \"genero\": \"FEMININO\",   \r\n    \"endereco\": {        \r\n        \"cep\": \"04268020\",\r\n        \"rua\": \"Rua Arcipreste de Arndrade\",\r\n        \"numero\": 507,\r\n        \"complemento\": \"s/complemento\",\r\n        \"bairro\": \"Ipiranga\",\r\n        \"cidade\": \"São Paulo\",\r\n        \"uf\": \"SP\"}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/cliente/pf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"cliente",
+						"pf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes delete {id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/cliente/delete/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"cliente",
+						"delete",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transacoes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"conta_origem\":{\r\n    \"id\":\"f0c4999f-a2d4-48c0-a78f-efb3a1ded4a5\"\r\n},\r\n \"conta_destino\":{\r\n    \"id\":\"d99e47a2-386e-4649-823d-5a9335b315b9\"\r\n},\r\n  \"tipo_transacao\": \"PIX\",\r\n  \"valor\": \"100.50\",\r\n  \"descricao\":\"PAGAMENTO\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/transacoes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"transacoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transacoes {id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/transacoes/ff137a77-e363-471d-a03a-225e1f9252e7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"transacoes",
+						"ff137a77-e363-471d-a03a-225e1f9252e7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transacoes tipo {tipoTrasacao}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/transacoes/tipo/PIX",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"transacoes",
+						"tipo",
+						"PIX"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transacoes periodo {dataInicial}/{dataFinal}}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/transacoes/periodo/2024-01-15/2024-01-15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"transacoes",
+						"periodo",
+						"2024-01-15",
+						"2024-01-15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transacoes conta {id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/transacoes/conta/875e4a2e-c44c-420c-8368-99d21842706a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"transacoes",
+						"conta",
+						"875e4a2e-c44c-420c-8368-99d21842706a"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
