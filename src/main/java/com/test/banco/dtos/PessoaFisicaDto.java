@@ -48,9 +48,6 @@ public class PessoaFisicaDto {
     @Valid
     private ContaDto conta;
 
-    @NotBlank
-    private String nome_mae;
-
     @ValueOfEnum(enumClass = Genero.class, message = "Valor inválido para genero, valores possiveis: MASCULINO, FEMININO; ")
     private String genero;
 }
