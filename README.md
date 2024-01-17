@@ -21,7 +21,7 @@ http://localhost:8090/swagger-ui/index.html
 
 |-------------------------------------------------------------------------|
 
--verbo Post http://localhost:8090/cliente/pj
+- verbo Post http://localhost:8090/cliente/pj
 
 {
 "telefone": "1137279661",
@@ -46,7 +46,7 @@ http://localhost:8090/swagger-ui/index.html
 "uf": "SP"}
 }
 
--verbo Post http://localhost:8090/cliente/pf
+- verbo Post http://localhost:8090/cliente/pf
 
 {
 "telefone": "8535825284",
@@ -72,8 +72,73 @@ http://localhost:8090/swagger-ui/index.html
 "uf": "SP"}
 }
 
+- verbo Get http://localhost:8090/cliente/100
 
+- verbo Get http://localhost:8090/cliente/todos
 
+- verbo Put http://localhost:8090/cliente/pj
+
+{   "id": 1,
+"telefone": "1137279661",
+"celular": "11997649175",
+"nome": "Priscila e Lívia Marketing ME",
+"cnpj": "69080968000171",
+"nome_fantasia": "Priscila e Lívia Marketing ME",
+"nome_contato": "Priscila fulana",
+"email": "producao@priscilaeliviamarketingme.com.br",    
+"endereco": {        
+"cep": "09962720",
+"rua": "Travessa Senhor do Bonfim",
+"numero": 891,
+"complemento": "s/complemento",
+"bairro": "Diadema",
+"cidade": "São Paulo",
+"uf": "SP"}
+}
+
+- verbo Put http://localhost:8090/cliente/pf
+
+{
+"id":"2",
+"telefone": "8535825284",
+"rg": "203625237",
+"cpf": "14857746832",
+"celular": "85985390965",
+"nome": "Rita Caroline Souza",
+"email": "rita@gol.com",
+"dt_nascimento": "1989-01-02",
+"genero": "FEMININO",   
+"endereco": {        
+"cep": "04268020",
+"rua": "Rua Arcipreste de Arndrade",
+"numero": 507,
+"complemento": "s/complemento",
+"bairro": "Ipiranga",
+"cidade": "São Paulo",
+"uf": "SP"}
+}
+
+- verbo Post http://localhost:8090/transacoes
+
+{
+"conta_origem":{
+"id":"f0c4999f-a2d4-48c0-a78f-efb3a1ded4a5"
+},
+"conta_destino":{
+"id":"d99e47a2-386e-4649-823d-5a9335b315b9"
+},
+"tipo_transacao": "PIX",
+"valor": "100.50",
+"descricao":"PAGAMENTO"  
+}
+
+- verbo Get http://localhost:8090/transacoes/ff137a77-e363-471d-a03a-225e1f9252e7
+
+- verbo Get http://localhost:8090/transacoes/tipo/PIX
+
+- verbo Get http://localhost:8090/transacoes/periodo/2024-01-15/2024-01-15
+
+- verbo Get http://localhost:8090/transacoes/conta/875e4a2e-c44c-420c-8368-99d21842706a
 
 |-------------------------------------------------------------------------|
 
@@ -95,5 +160,5 @@ responsabilidades para cada package:
 - Spring Boot 2.7.5
 - Swagger
 - Maven
-- H2
+- H2 acesso http://localhost:8090/h2-console/ (não precisa de senha)
 - IntelliJ
