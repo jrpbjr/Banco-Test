@@ -77,6 +77,18 @@ http://localhost:8090/swagger-ui/index.html
 
 |-------------------------------------------------------------------------|
 
+responsabilidades para cada package:
+- **Config**: configurações necessárias para dependências
+- **Controllers**: métodos que tratam requisições da API e chamam ações dos services
+- **DTOs**: modelos de schemas a serem seguidos ao fazer requisições na API
+- **Enums**: listas de valores aceitáveis em diferentes atributos do projeto
+- **Exceptions**: arquivo de exceção que trata os erros do sistema
+- **Models**: classes que representam as entidades do sistema, com atributos, construtores e getters e setters
+- **Repositories**: interfaces que fazem o acesso direto ao banco de dados com queries padrão ou personalizadas
+- **Services**: métodos que fazem as validações das regras de negócios e fazem requisições ligadas ao banco de dados para os repositories
+
+
+
 # Ferramentas utilizadas
 
 - Java 17 com module path
