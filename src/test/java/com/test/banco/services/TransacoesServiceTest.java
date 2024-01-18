@@ -40,6 +40,8 @@ class TransacoesServiceTest {
     public static final LocalDateTime DATA = LocalDateTime.now();
     public static final LocalDate DATA_INICIAL = LocalDate.now().plusMonths(1);
     public static final LocalDate DATA_FINAL = LocalDate.now().plusMonths(1);
+
+    public static final Boolean MESSAGESENT = true;
     @Mock
     private TransacaoRepository _repositoryTransacao;
     @Mock
@@ -126,7 +128,7 @@ class TransacoesServiceTest {
     public void starTransacao() {
         contaPF = new Conta(IDPF, NUMERO_CONTAPF, AGENCIA, TIPO_OPERACAO, SALDO, STATUS);
         contaPJ = new Conta(IDPJ, NUMERO_CONTAPJ, AGENCIA, TipoOperacaoConta.CONTACORRENTEPJ, BigDecimal.valueOf(5000), STATUS);
-        transacao = new Transacao(ID, contaPF, contaPJ, TIPO_TRANSACAO, DATA, VALOR, DESCRICAO);
-        optionalTransacao = Optional.of(new Transacao(ID, contaPF, contaPJ, TIPO_TRANSACAO, DATA, VALOR, DESCRICAO));
+        transacao = new Transacao(ID, contaPF, contaPJ, TIPO_TRANSACAO, DATA, VALOR, DESCRICAO,MESSAGESENT);
+        optionalTransacao = Optional.of(new Transacao(ID, contaPF, contaPJ, TIPO_TRANSACAO, DATA, VALOR, DESCRICAO,MESSAGESENT));
     }
 }

@@ -29,6 +29,8 @@ class ContaServiceTest {
     public static final boolean STATUS = true;
     public static final int NUMERO_CONTAPJ = 141516;
     public static final String IDPJ = "7df09933-7eb1-4fb9-8261-46a8ff71a506";
+
+    public static final Boolean MESSAGESENT = true;
     @Mock
     private ContaRepository _repositoryConta;
     @InjectMocks
@@ -116,6 +118,6 @@ class ContaServiceTest {
     public void starContas(){
         contaPF = new Conta(IDPF, NUMERO_CONTAPF, AGENCIA, TIPO_OPERACAO, SALDO, STATUS) ;
         contaPJ = new Conta(IDPJ, NUMERO_CONTAPJ,AGENCIA, TipoOperacaoConta.CONTACORRENTEPJ, BigDecimal.valueOf(5000),STATUS );
-        transacao = new Transacao("0d43c3bf-1f4b-4ae6-9fcd-59eb1b508340", contaPF, contaPJ, TipoTransacao.TED, LocalDateTime.now(), BigDecimal.valueOf(150),"pagamento");
+        transacao = new Transacao("0d43c3bf-1f4b-4ae6-9fcd-59eb1b508340", contaPF, contaPJ, TipoTransacao.TED, LocalDateTime.now(), BigDecimal.valueOf(150),"pagamento",MESSAGESENT);
     }
 }
