@@ -62,6 +62,11 @@ public class Transacao {
     @Column()
     private String descricao;
 
+    @Getter
+    @Setter
+    @Column()
+    private Boolean messageSent;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
