@@ -15,5 +15,5 @@ INSERT INTO PESSOA_FISICA VALUES (200, now(), '87985390955', now(), 'fulana@sigi
 INSERT INTO PESSOA_FISICA VALUES (201, now(), '63989426655', now(), 'Allan@sigi.com', 'Allan Almeida', 1, '6326574455','24176339255','1980-10-15','MASCULINO','482212329',    'd4130b7b-42a1-5508-83fe-d80a9846f86f',201);
 
 
-INSERT INTO TRANSACAO VALUES ('ff137a77-e363-551d-a03a-225e1f9252e7', now(),  'Pagamento de compra', 'PIX',  59.50, 'd4130b7b-42a1-5508-83fe-d80a9846f86f','f0c4999f-a2d4-55c0-a78f-efb3a1ded4a5');
-INSERT INTO TRANSACAO VALUES ('cc17c138-33f3-551a-adb6-22436dbb2473',  now(), 'pagamento de pedido', 'PIX', 1999.50, 'f0c4999f-a2d4-55c0-a78f-efb3a1ded4a5', '875e4a2e-c44c-550c-8368-99d21842706a');
+INSERT INTO TRANSACAO VALUES ('ff137a77-e363-551d-a03a-225e1f9252e7', now(),  'Pagamento de compra',TRUE, 'PIX',  59.50, 'd4130b7b-42a1-5508-83fe-d80a9846f86f','f0c4999f-a2d4-55c0-a78f-efb3a1ded4a5');
+INSERT INTO TRANSACAO VALUES ('cc17c138-33f3-551a-adb6-22436dbb2473',  now(), 'pagamento de pedido',TRUE, 'PIX', 1999.50, 'f0c4999f-a2d4-55c0-a78f-efb3a1ded4a5', '875e4a2e-c44c-550c-8368-99d21842706a');
