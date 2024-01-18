@@ -6,8 +6,10 @@ import com.test.banco.models.Conta;
 import com.test.banco.models.Messagem;
 import com.test.banco.models.Transacao;
 import com.test.banco.repositories.TransacaoRepository;
+import com.test.banco.proxy.MensagemProxy;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -21,8 +23,12 @@ import java.util.*;
 @AllArgsConstructor
 @Service
 public class TransacoesService {
+
     private TransacaoRepository _repositoryTransacao;
     private ContaService contaService;
+
+
+    private MensagemProxy mensagemProxy;
 
     @Transactional
     public Transacao efetuarTransacao(Transacao transacao) {
@@ -35,9 +41,24 @@ public class TransacoesService {
             throw new NegocioException("Não foi possível concluir a transação.");
         }
 
+        /*
+        feign
+         */
+        try{
+            Messagem messagem = mensagemProxy.getMessage();
+            if(messagem != null){
+                transacao.setMessageSent(messagem.getMessageSent());
+            }else {
+                throw new NegocioException("Messagem de retorno nula.");
+            }
+
+        } catch (Exception e) {
+            throw new NegocioException("Erro ao acessar serviço de mensagens: " + e.getMessage());
+        }
+
+        /*
         RestTemplate restTemplate = new RestTemplate();
         String url = "https://run.mocky.io/v3/9769bf3a-b0b6-477a-9ff5-91f63010c9d3";
-
         try {
             ResponseEntity<Messagem> response = restTemplate.exchange(url, HttpMethod.GET, null, Messagem.class);
             Messagem responseBody = response.getBody();
@@ -49,6 +70,8 @@ public class TransacoesService {
         } catch (Exception e) {
             throw new NegocioException("Erro ao acessar serviço de mensagens: " + e.getMessage());
         }
+
+        */
 
         transacao.setConta_origem(contas.get(0));
         transacao.setConta_destino(contas.get(1));
